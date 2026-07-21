@@ -1,0 +1,15 @@
+/* Base structural rules for all context SVGs */
+.icon-whatsapp,
+.icon-instagram {
+  width: 1.25rem;  /* Default base matching w-5 */
+  height: 1.25rem; /* Default base matching h-5 */
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.icon-lotus {
+  width: 2rem;  /* Default base matching w-8 */
+  height: 2rem; /* Default base matching h-8 */
+  display: inline-block;
+  vertical-align: middle;
+}

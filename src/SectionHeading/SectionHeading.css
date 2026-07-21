@@ -1,0 +1,96 @@
+/* --- Center Wrapper and Base Layout Layout --- */
+.section-heading-reveal {
+  text-align: center;
+  margin-bottom: clamp(1.75rem, 5vw, 3.5rem);
+  /* Uses CSS safe-area insets for modern iPhones with curved edges/notches */
+  padding-left: max(1rem, env(safe-area-inset-left));
+  padding-right: max(1rem, env(safe-area-inset-right));
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Flex layout for lines and title matching gap-4 */
+.section-heading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.4rem, 2vw, 1.5rem); 
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Base line setup - Uses flex-grow for safe, fluid shrinking */
+.heading-line {
+  height: 1px;
+  flex-grow: 1;
+  flex-shrink: 1;
+  max-width: clamp(2rem, 10vw, 6rem); /* Scales smoothly across screens */
+  min-width: 0.5rem; /* Prevents overflow while staying visible */
+}
+
+.heading-line.line-left {
+  background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.8));
+}
+
+.heading-line.line-right {
+  background: linear-gradient(to left, transparent, rgba(212, 175, 55, 0.8));
+}
+
+/* Title typography with Fluid Sizing and safe multi-line wrapping */
+.section-heading-title {
+  font-family: var(--font-display, inherit);
+  text-transform: uppercase;
+  letter-spacing: clamp(0.08em, 1.2vw, 0.18em);
+  /* Smooth scale from 18px on small mobile up to 30px on desktop */
+  font-size: clamp(1.125rem, 4vw, 1.875rem); 
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.25;
+  margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  max-width: 100%; 
+  flex-shrink: 0; /* Prevents text block from getting arbitrarily squashed by flex lines */
+}
+
+/* Subtitle block matching max-w-xl and text-sm */
+.section-heading-subtitle {
+  margin-top: clamp(0.5rem, 1.5vw, 0.75rem);
+  font-size: clamp(0.8rem, 1.8vw, 0.925rem); 
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.6); 
+  max-width: min(36rem, 100%); 
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  box-sizing: border-box;
+}
+
+/* --- Mobile & iPhone Specific Tweaks --- */
+
+/* Extra small devices (iPhone SE 1st gen, Galaxy Fold outer screen, <= 360px) */
+@media (max-width: 360px) {
+  .section-heading-container {
+    gap: 0.35rem;
+  }
+
+  .heading-line {
+    /* Hide lines on ultra-narrow screens so title gets full focus */
+    display: none;
+  }
+
+  .section-heading-title {
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+  }
+}
+
+/* Fixes for iOS WebKit subpixel rendering issues */
+@supports (-webkit-touch-callout: none) {
+  .heading-line {
+    /* iOS Webkit renders 1px lines sharply without collapsing */
+    transform: translateZ(0);
+  }
+}

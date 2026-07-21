@@ -1,0 +1,228 @@
+/* Header Context & Scroll Variations */
+.navbar-header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 50;
+  transition: all 0.500s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar-header.is-top {
+  background-color: rgba(10, 7, 3, 0.60);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.navbar-header.is-scrolled {
+  background-color: rgba(10, 7, 3, 0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 10px 40px -18px rgba(0, 0, 0, 0.9);
+}
+
+/* Layout Container */
+.navbar-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80rem; /* max-w-7xl */
+  padding-left: 1.25rem; /* px-5 */
+  padding-right: 1.25rem;
+}
+
+.navbar-row {
+  display: flex;
+  height: 68px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem; /* gap-4 */
+}
+
+/* Logo and Branding Styles */
+.navbar-logo-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* gap-3 */
+  text-decoration: none;
+}
+
+.navbar-logo-icon {
+  color: #e2bf5e;
+  display: inline-block;
+  transition: transform 0.500s ease;
+}
+
+.navbar-logo-group:hover .navbar-logo-icon {
+  transform: scale(1.1) rotate(6deg);
+}
+
+.navbar-logo-text {
+  line-height: 1;
+}
+
+.navbar-brand-name {
+  display: block;
+  font-family: var(--font-display, inherit); /* Falls back to global display font */
+  font-size: 1.125rem; /* text-lg */
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  color:white;
+  /* Make sure you define your gradient text utility globally, or handle it via color: #ecd282 */
+}
+
+.navbar-brand-sub {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 9px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* Desktop Navigation Link List */
+.navbar-desktop-links {
+  display: none; /* hidden */
+  align-items: center;
+  gap: 1.75rem; /* gap-7 */
+}
+
+.navbar-desktop-link {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: color 0.300s ease;
+}
+
+.navbar-desktop-link:hover {
+  color: #ecd282;
+}
+
+/* Action Area (CTA & Menu Toggles) */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* gap-3 */
+}
+
+.navbar-cta-btn {
+  display: none; /* hidden */
+  border-radius: 9999px;
+  padding: 0.625rem 1.25rem; /* py-2.5 px-5 */
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.025em; /* tracking-wide */
+  text-decoration: none;
+}
+
+.navbar-mobile-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem; /* w-10 */
+  height: 2.5rem;
+  border-radius: 9999px;
+  background: transparent;
+  border: 1px solid rgba(212, 175, 55, 0.40);
+  color: #ecd282;
+  cursor: pointer;
+}
+
+/* Gold Hairline */
+.gold-hairline {
+  height: 1px;
+  width: 100%;
+  opacity: 0.60;
+  /* Assuming .gold-hairline contains background setups in global styles */
+}
+
+/* Mobile Panel System */
+.navbar-mobile-panel {
+  display: block;
+  overflow: hidden;
+  background-color: rgba(13, 10, 5, 0.97);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  transition: all 0.500s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.navbar-mobile-panel.is-closed {
+  max-height: 0;
+}
+
+.navbar-mobile-panel.is-open {
+  max-height: 420px;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.20);
+}
+
+.navbar-mobile-links {
+  padding: 1.25rem 1.5rem; /* py-5 px-6 */
+  display: flex;
+  flex-col: column;
+  flex-direction: column;
+  gap: 0.25rem; /* gap-1 */
+}
+
+.navbar-mobile-link {
+  display: block;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+  font-size: 0.875rem; /* text-sm */
+  color: rgba(255, 255, 255, 0.80);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  text-decoration: none;
+  transition: all 0.500s ease;
+}
+
+.navbar-mobile-link:hover {
+  color: #ecd282;
+}
+
+.navbar-mobile-link.link-hidden {
+  opacity: 0;
+  transform: translateX(-1rem); /* -translate-x-4 */
+}
+
+.navbar-mobile-link.link-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.navbar-mobile-cta {
+  margin-top: 1rem;
+  display: inline-flex;
+  items-center: center;
+  justify-content: center;
+  border-radius: 9999px;
+  padding: 0.75rem 1.25rem; /* py-3 px-5 */
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* --- Media Queries (Matches Tailwind's sm & lg breakpoints) --- */
+
+@media (min-width: 640px) {
+  .navbar-cta-btn {
+    display: inline-flex; /* sm:inline-flex */
+  }
+}
+
+@media (min-width: 1024px) {
+  .navbar-container {
+    padding-left: 2rem; /* lg:px-8 */
+    padding-right: 2rem;
+  }
+
+  .navbar-desktop-links {
+    display: flex; /* lg:flex */
+  }
+
+  .navbar-mobile-toggle {
+    display: none; /* lg:hidden */
+  }
+  
+  .navbar-mobile-panel {
+    display: none; /* lg:hidden */
+  }
+}

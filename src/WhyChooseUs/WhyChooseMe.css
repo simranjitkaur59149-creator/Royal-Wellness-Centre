@@ -1,0 +1,169 @@
+/* ===========================
+   WHY SECTION
+=========================== */
+
+.why-section {
+  position: relative;
+  padding: clamp(1rem, 3vw, 2rem) 0;
+  scroll-margin-top: 5rem;
+}
+
+.why-container {
+  width: min(100%, 1280px);
+  margin: auto;
+  padding-inline: clamp(1rem, 4vw, 2rem);
+}
+
+/* ===========================
+   GRID
+=========================== */
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.why-card {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(0.75rem, 2vw, 1rem);
+  padding: clamp(1rem, 2vw, 1.5rem);
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* ===========================
+   ICON
+=========================== */
+
+.why-icon-box {
+  width: clamp(2.8rem, 5vw, 3.2rem);
+  height: clamp(2.8rem, 5vw, 3.2rem);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  background: rgba(212, 175, 55, 0.08);
+
+  transition: all .4s ease;
+}
+
+.why-icon {
+  width: clamp(1rem, 2vw, 1.3rem);
+  height: clamp(1rem, 2vw, 1.3rem);
+  color: #e2bf5e;
+}
+
+.why-card:hover .why-icon-box {
+  transform: scale(1.08);
+  border-color: rgba(212, 175, 55, 0.7);
+}
+
+/* ===========================
+   CONTENT
+=========================== */
+
+.why-content {
+  flex: 1;
+}
+
+.why-card-title {
+  margin: 0;
+
+  font-size: clamp(0.85rem, 1vw, 1rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  line-height: 1.35;
+
+  color: #f3e2a7;
+}
+
+.why-card-desc {
+  margin-top: .55rem;
+
+  font-size: clamp(0.8rem, .9vw, .95rem);
+  line-height: 1.7;
+
+  color: rgba(255,255,255,.65);
+}
+
+/* ===========================
+   EXTRA SMALL DEVICES
+=========================== */
+
+@media (max-width:480px){
+
+    .why-grid{
+        grid-template-columns:1fr;
+        gap:1rem;
+    }
+
+    .why-card{
+        padding:1rem;
+        gap:.75rem;
+    }
+
+    .why-card-title{
+        font-size:.9rem;
+    }
+
+    .why-card-desc{
+        font-size:.82rem;
+    }
+
+}
+
+/* ===========================
+   TABLETS
+=========================== */
+
+@media (min-width:768px){
+
+    .why-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+/* ===========================
+   LAPTOPS
+=========================== */
+
+@media (min-width:1024px){
+
+    .why-grid{
+        grid-template-columns:repeat(4,1fr);
+    }
+
+}
+
+/* ===========================
+   LARGE DESKTOPS
+=========================== */
+
+@media (min-width:1600px){
+
+    .why-container{
+        max-width:1500px;
+    }
+
+    .why-grid{
+        gap:2rem;
+    }
+
+    .why-card{
+        padding:2rem;
+    }
+
+}
