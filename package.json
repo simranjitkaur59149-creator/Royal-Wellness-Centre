@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start":"npm run dev",
+    "start": "npm run dev",
     "dev": "vite",
     "build": "vite build",
     "lint": "oxlint",
@@ -13,7 +13,8 @@
   "dependencies": {
     "lucide-react": "^1.25.0",
     "react": "^19.2.7",
-    "react-dom": "^19.2.7"
+    "react-dom": "^19.2.7",
+    "react-icons": "^5.7.0"
   },
   "devDependencies": {
     "@types/react": "^19.2.17",

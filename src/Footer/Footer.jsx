@@ -1,5 +1,6 @@
 import { Send, MapPin } from "lucide-react";
-import { LotusIcon, InstagramIcon } from "../Icons/Icons";
+
+import { FaInstagram } from "react-icons/fa";
 import "./Footer.css";
 
 export default function Footer() {
@@ -16,9 +17,7 @@ export default function Footer() {
           {/* Brand & Location Block */}
           <div className="footer-brand-block">
             <div className="footer-brand-header">
-              <span className="footer-logo-color">
-                <LotusIcon className="w-9 h-9" />
-              </span>
+              
               <div className="footer-brand-text">
                 <p className="footer-copyright">&copy; 2026 Royal Wellness Centre</p>
                 <p className="footer-subtext">Certified Wellness Coach</p>
@@ -49,7 +48,7 @@ export default function Footer() {
                 aria-label="Follow on Instagram"
                 className="footer-action-btn"
               >
-                <InstagramIcon className="footer-btn-icon" />
+                <FaInstagram className="footer-btn-icon" />
               </a>
 
               <a

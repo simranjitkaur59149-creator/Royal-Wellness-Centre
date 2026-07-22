@@ -1,17 +1,9 @@
-// import Navbar from "./Navbar.jsx";
-// import Hero from "./Hero";
-// import About from "./About";
-// import Services from "./Services";
-// import WhyChooseMe from "./WhyChooseMe";
-// import Transformation from "./Transformation";
-// import Testimonials from "./Testimonials";
-// import Connect from "./Connect";
-// import Footer from "./Footer";
+
 import About from "./About.jsx/About";
 import Connect from "./Contact/Contact";
 import Footer from "./Footer/Footer";
 import Hero from "./Hero/Hero";
-import { WhatsAppIcon } from "./Icons/Icons";
+import { FaWhatsapp } from "react-icons/fa";
 import Navbar from "./Navbar/Navbar";
 import Services from "./Services/Services";
 import Testimonials from "./Testimonial/Testimonial";
@@ -43,7 +35,7 @@ export default function App() {
         className="group fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-[#2fe07a] to-[#0e9b52] shadow-[0_12px_32px_-6px_rgba(37,211,102,0.65)] transition-transform duration-400 hover:scale-110"
       >
         <span className="ping-soft absolute inset-0 rounded-full bg-[#25d366]/50" />
-        <WhatsAppIcon className="relative h-7 w-7 text-white" />
+        <FaWhatsapp  className="relative h-7 w-7 text-white" />
       </a>
     </div>
   );

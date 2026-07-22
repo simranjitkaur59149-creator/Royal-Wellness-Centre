@@ -6,8 +6,8 @@
 }
 
 body {
-  background-color: #0a0703;
-  color: #ffffff;
+  background-color: var(--bg);
+  color: var(--text);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -15,10 +15,10 @@ body {
   overflow-x: hidden;
 }
 
-/* Custom selection highlight matching the golden theme color */
+/* Custom selection highlight matching the luxury gold theme scheme */
 ::selection {
-  background-color: #FFE293;
-  color: #0a0703;
+  background-color: var(--accent);
+  color: var(--primary-dark);
 }
 
 /* --- App Root Layout Classes --- */
@@ -30,12 +30,14 @@ body {
   min-height: 100vh;
 }
 
+/* Background mapped to Dark Espresso background variable */
 .bg-\[\#0a0703\] {
-  background-color: #0a0703;
+  background-color: var(--bg);
 }
 
+/* Base text color mapped to Off-White/Cream variable */
 .text-white {
-  color: #ffffff;
+  color: var(--text);
 }
 
 .antialiased {
@@ -43,7 +45,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* --- Floating WhatsApp Button Style Rules --- */
+/* --- Floating WhatsApp / Contact Button Style Rules --- */
 .fixed {
   position: fixed;
 }
@@ -84,14 +86,16 @@ body {
   border-radius: 9999px;
 }
 
-/* Premium gradient matching standard brand colors */
+/* Luxury Gold & Warm Accent action button gradient */
 .bg-gradient-to-br {
-  background: linear-gradient(135deg, #2fe07a 0%, #0e9b52 100%);
+  background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
+  color: var(--primary-dark);
+  border: 1px solid var(--accent-light);
 }
 
-/* Soft, ambient glow underneath the green badge action link */
+/* Ambient gold glow underneath the floating action badge */
 .shadow-\[0_12px_32px_-6px_rgba\(37\,211\,102\,0\.65\)\] {
-  box-shadow: 0 12px 32px -6px rgba(37, 211, 102, 0.65);
+  box-shadow: 0 12px 32px -6px var(--shadow-gold);
 }
 
 .transition-transform {
@@ -129,7 +133,7 @@ body {
 }
 
 .bg-\[\#25d366\]\/50 {
-  background-color: rgba(37, 211, 102, 0.5);
+  background-color: var(--shadow-gold);
 }
 
 /* Custom Soft Radiating Wave Animation */
@@ -140,10 +144,10 @@ body {
 @keyframes softPulse {
   0%, 100% {
     transform: scale(1);
-    opacity: 0.4;
+    opacity: 0.5;
   }
   50% {
-    transform: scale(1.18);
+    transform: scale(1.22);
     opacity: 0;
   }
 }

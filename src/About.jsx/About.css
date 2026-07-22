@@ -1,3 +1,44 @@
+:root {
+  /* Primary Brand Colors */
+  --primary: #220901;          /* Rich Espresso */
+  --primary-dark: #160500;
+  --primary-light: #3B1207;
+
+  /* Secondary */
+  --secondary: #621708;        /* Deep Mahogany */
+  --secondary-light: #7E2212;
+
+  /* Accent Colors */
+  --accent: #D4AF37;           /* Luxury Gold */
+  --accent-light: #F6D365;
+  --accent-dark: #B8860B;
+
+  /* Warm Accent */
+  --highlight: #F6AA1C;        /* Amber Gold */
+
+  /* Optional Accent */
+  --accent-red: #941B0C;       /* Burnt Crimson */
+  --accent-orange: #BC3908;    /* Burnt Orange */
+
+  /* Backgrounds */
+  --bg: #0F0502;
+  --surface: #1A0803;
+  --card: #2A1007;
+
+  /* Text */
+  --text: #FFF8EC;
+  --text-muted: #D8C9B5;
+  --text-dark: #2C1B1B;
+
+  /* Borders */
+  --border: rgba(212, 175, 55, 0.18);
+  --border-hover: rgba(212, 175, 55, 0.45);
+
+  /* Effects */
+  --shadow-gold: rgba(212, 175, 55, 0.25);
+  --shadow-dark: rgba(0, 0, 0, 0.45);
+}
+
 /* Base Section Styling */
 .about-section {
   position: relative;
@@ -7,6 +48,7 @@
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);
   box-sizing: border-box;
+  background-color: var(--bg);
 }
 
 .about-container {
@@ -24,6 +66,10 @@
   padding: clamp(1.25rem, 4vw, 2.5rem);
   box-sizing: border-box;
   width: 100%;
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px var(--shadow-dark);
 }
 
 /* Responsive Grid Layout */
@@ -41,6 +87,7 @@
   font-size: clamp(1.25rem, 4vw, 1.75rem);
   line-height: 1.25;
   margin: 0;
+  color: var(--text);
   overflow-wrap: break-word;
 }
 
@@ -48,21 +95,21 @@
   margin-top: 0.75rem;
   height: 1px;
   width: clamp(3rem, 8vw, 4rem);
-  background: linear-gradient(to right, #d4af37, transparent);
+  background: linear-gradient(to right, var(--accent), transparent);
 }
 
 .about-description {
   margin-top: clamp(1rem, 2vh, 1.25rem);
   font-size: clamp(0.8125rem, 2.2vw, 0.875rem);
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--text-muted);
   text-wrap: pretty;
   overflow-wrap: break-word;
 }
 
 .about-highlight {
-  color: #ecd282;
-  font-weight: 500;
+  color: var(--highlight);
+  font-weight: 600;
 }
 
 /* Tags/Specialties List */
@@ -82,7 +129,8 @@
   font-size: clamp(0.625rem, 2vw, 0.6875rem);
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--accent-light);
+  font-weight: 500;
   white-space: nowrap;
 }
 
@@ -90,7 +138,7 @@
   height: 0.25rem;
   width: 0.25rem;
   transform: rotate(45deg);
-  background-color: #d4af37;
+  background-color: var(--accent);
   flex-shrink: 0;
 }
 
@@ -110,7 +158,7 @@
   bottom: -0.5rem;
   left: -0.5rem;
   border-radius: 1rem;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.18), transparent 70%);
+  background: radial-gradient(circle, var(--shadow-gold), transparent 70%);
   pointer-events: none;
 }
 
@@ -122,9 +170,9 @@
   max-height: clamp(15rem, 35vh, 22rem);
   aspect-ratio: 16 / 9;
   border-radius: 0.75rem;
-  border: 1px solid rgba(212, 175, 55, 0.35);
+  border: 1px solid var(--border);
   object-fit: cover;
-  box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 20px 40px -20px var(--shadow-dark);
   display: block;
 }
 

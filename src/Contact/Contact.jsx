@@ -1,7 +1,9 @@
 import { Phone, Heart } from "lucide-react";
 import SectionHeading from "../SectionHeading/SectionHeading";
 import Reveal from "../Reveal/Reveal";
-import { WhatsAppIcon, InstagramIcon } from "../Icons/Icons";
+// import { WhatsAppIcon } from "../Icons/Icons";
+import { FaInstagram ,FaWhatsapp} from "react-icons/fa6";
+
 import "./Contact.css"; // Ensure this path matches where you save the CSS file
 
 export default function Connect() {
@@ -40,7 +42,7 @@ export default function Connect() {
               className="card-gold card-gold-lift group connect-card"
             >
               <span className="icon-box icon-box-gold">
-                <InstagramIcon className="icon-size text-gold" />
+                <FaInstagram  className="icon-size text-gold" />
               </span>
               <span className="text-container">
                 <span className="label-text text-gold-dim">
@@ -62,7 +64,7 @@ export default function Connect() {
               className="btn-whatsapp group connect-card whatsapp-card"
             >
               <span className="icon-box icon-box-whatsapp">
-                <WhatsAppIcon className="whatsapp-icon-size" />
+                <FaWhatsapp className="whatsapp-icon-size" />
               </span>
               <span className="text-container">
                 <span className="whatsapp-label">

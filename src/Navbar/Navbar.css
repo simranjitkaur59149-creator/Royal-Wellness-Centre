@@ -9,16 +9,17 @@
 }
 
 .navbar-header.is-top {
-  background-color: rgba(10, 7, 3, 0.60);
+  background-color: rgba(15, 5, 2, 0.75); /* Dark espresso backdrop with transparency */
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
 
 .navbar-header.is-scrolled {
-  background-color: rgba(10, 7, 3, 0.92);
+  background-color: rgba(15, 5, 2, 0.92);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  box-shadow: 0 10px 40px -18px rgba(0, 0, 0, 0.9);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 10px 30px -10px var(--shadow-dark);
 }
 
 /* Layout Container */
@@ -47,7 +48,7 @@
 }
 
 .navbar-logo-icon {
-  color: #e2bf5e;
+  color: var(--accent);
   display: inline-block;
   transition: transform 0.500s ease;
 }
@@ -62,12 +63,11 @@
 
 .navbar-brand-name {
   display: block;
-  font-family: var(--font-display, inherit); /* Falls back to global display font */
+  font-family: var(--font-display, inherit);
   font-size: 1.125rem; /* text-lg */
   letter-spacing: 0.12em;
-  font-weight: 600;
-  color:white;
-  /* Make sure you define your gradient text utility globally, or handle it via color: #ecd282 */
+  font-weight: 700;
+  color: var(--text);
 }
 
 .navbar-brand-sub {
@@ -76,7 +76,8 @@
   font-size: 9px;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--accent-light);
+  font-weight: 500;
 }
 
 /* Desktop Navigation Link List */
@@ -89,13 +90,13 @@
 .navbar-desktop-link {
   font-size: 12.5px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--text-muted);
   text-decoration: none;
   transition: color 0.300s ease;
 }
 
 .navbar-desktop-link:hover {
-  color: #ecd282;
+  color: var(--accent);
 }
 
 /* Action Area (CTA & Menu Toggles) */
@@ -113,6 +114,16 @@
   font-weight: 600;
   letter-spacing: 0.025em; /* tracking-wide */
   text-decoration: none;
+  background: linear-gradient(135deg, var(--accent-light), var(--accent));
+  color: var(--primary-dark);
+  border: 1px solid var(--accent-light);
+  box-shadow: 0 4px 15px var(--shadow-gold);
+  transition: all 0.3s ease;
+}
+
+.navbar-cta-btn:hover {
+  box-shadow: 0 6px 20px var(--shadow-gold);
+  transform: translateY(-1px);
 }
 
 .navbar-mobile-toggle {
@@ -122,10 +133,16 @@
   width: 2.5rem; /* w-10 */
   height: 2.5rem;
   border-radius: 9999px;
-  background: transparent;
-  border: 1px solid rgba(212, 175, 55, 0.40);
-  color: #ecd282;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--accent);
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navbar-mobile-toggle:hover {
+  border-color: var(--border-hover);
+  background: var(--card);
 }
 
 /* Gold Hairline */
@@ -133,14 +150,14 @@
   height: 1px;
   width: 100%;
   opacity: 0.60;
-  /* Assuming .gold-hairline contains background setups in global styles */
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
 }
 
 /* Mobile Panel System */
 .navbar-mobile-panel {
   display: block;
   overflow: hidden;
-  background-color: rgba(13, 10, 5, 0.97);
+  background-color: rgba(26, 8, 3, 0.98); /* Surface dark background with blur */
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   transition: all 0.500s cubic-bezier(0.22, 1, 0.36, 1);
@@ -152,13 +169,12 @@
 
 .navbar-mobile-panel.is-open {
   max-height: 420px;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.20);
+  border-bottom: 1px solid var(--border);
 }
 
 .navbar-mobile-links {
   padding: 1.25rem 1.5rem; /* py-5 px-6 */
   display: flex;
-  flex-col: column;
   flex-direction: column;
   gap: 0.25rem; /* gap-1 */
 }
@@ -168,14 +184,16 @@
   padding-top: 0.625rem;
   padding-bottom: 0.625rem;
   font-size: 0.875rem; /* text-sm */
-  color: rgba(255, 255, 255, 0.80);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--text-muted);
+  font-weight: 500;
+  border-bottom: 1px solid var(--border);
   text-decoration: none;
   transition: all 0.500s ease;
 }
 
 .navbar-mobile-link:hover {
-  color: #ecd282;
+  color: var(--accent);
+  padding-left: 0.25rem;
 }
 
 .navbar-mobile-link.link-hidden {
@@ -191,13 +209,16 @@
 .navbar-mobile-cta {
   margin-top: 1rem;
   display: inline-flex;
-  items-center: center;
+  align-items: center;
   justify-content: center;
   border-radius: 9999px;
   padding: 0.75rem 1.25rem; /* py-3 px-5 */
   font-size: 0.875rem;
   font-weight: 600;
   text-decoration: none;
+  background: linear-gradient(135deg, var(--accent-light), var(--accent));
+  color: var(--primary-dark);
+  box-shadow: 0 4px 15px var(--shadow-gold);
 }
 
 /* --- Media Queries (Matches Tailwind's sm & lg breakpoints) --- */

@@ -1,20 +1,43 @@
 /* ==========================================================================
-   Gurneet Wellness — Dark Luxury & Gold Theme
+   Gurneet Wellness — Dark Luxury Theme (Espresso, Mahogany & Gold)
    ========================================================================== */
 
 /* --- 1. Variables & Global Tokens --- */
 :root {
-  --bg-dark: #110f0c;
-  --bg-card: #191612;
-  --bg-card-hover: #221e18;
-  --gold-primary: #e2b755;
-  --gold-hover: #f0ca6e;
-  --gold-subtle: rgba(226, 183, 85, 0.15);
-  --card-border: #33291d;
-  --border-light: rgba(226, 183, 85, 0.25);
-  --text-light: #ffffff;
-  --text-muted: #b5aba0;
-  --text-dark: #110f0c;
+  /* Primary Brand Colors */
+  --primary: #220901;          /* Rich Espresso */
+  --primary-dark: #160500;
+  --primary-light: #3B1207;
+
+  /* Secondary */
+  --secondary: #621708;        /* Deep Mahogany */
+  --secondary-light: #7E2212;
+
+  /* Accent Colors */
+  --accent: #D4AF37;           /* Luxury Gold */
+  --accent-light: #F6D365;
+  --accent-dark: #B8860B;
+
+  /* Warm Accent */
+  --highlight: #F6AA1C;        /* Amber Gold */
+
+  /* Backgrounds */
+  --bg: #0F0502;
+  --surface: #1A0803;
+  --card: #2A1007;
+
+  /* Text */
+  --text: #FFF8EC;
+  --text-muted: #D8C9B5;
+  --text-dark: #2C1B1B;
+
+  /* Borders */
+  --border: rgba(212, 175, 55, 0.18);
+  --border-hover: rgba(212, 175, 55, 0.45);
+
+  /* Effects */
+  --shadow-gold: rgba(212, 175, 55, 0.25);
+  --shadow-dark: rgba(0, 0, 0, 0.45);
 
   /* Shared Transitions */
   --transition-fast: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -25,8 +48,8 @@
 .transform-section {
   position: relative;
   padding: clamp(3rem, 7vw, 6.5rem) 0;
-  background-color: var(--bg-dark);
-  color: var(--text-light);
+  background-color: var(--bg);
+  color: var(--text);
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   width: 100%;
   overflow-x: hidden;
@@ -57,7 +80,7 @@
   font-family: 'Playfair Display', 'Merriweather', serif;
   font-size: clamp(2.2rem, 5.5vw, 4.2rem);
   line-height: 1.12;
-  color: var(--text-light);
+  color: var(--text);
   margin-bottom: 1.25rem;
   font-weight: 700;
   letter-spacing: -0.5px;
@@ -65,7 +88,9 @@
 }
 
 .hero-title strong {
-  color: var(--gold-primary);
+  background: linear-gradient(90deg, var(--accent-light), var(--accent), var(--highlight));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-weight: 800;
 }
 
@@ -75,6 +100,7 @@
   margin: 0 auto 2.25rem;
   max-width: 620px;
   line-height: 1.6;
+  font-weight: 500;
 }
 
 /* Hero Action Buttons */
@@ -104,28 +130,28 @@
 }
 
 .btn-primary {
-  background-color: var(--gold-primary);
-  color: var(--text-dark);
-  border: 2px solid var(--gold-primary);
-  box-shadow: 0 4px 20px rgba(226, 183, 85, 0.25);
+  background: linear-gradient(180deg, var(--accent-light) 0%, var(--accent) 100%);
+  color: var(--primary-dark);
+  border: 1px solid var(--accent-light);
+  box-shadow: 0 4px 20px var(--shadow-gold);
 }
 
 .btn-primary:hover {
-  background-color: var(--gold-hover);
-  border-color: var(--gold-hover);
+  filter: brightness(1.08);
   transform: translateY(-2px);
-  box-shadow: 0 6px 25px rgba(226, 183, 85, 0.4);
+  box-shadow: 0 6px 25px var(--shadow-gold);
 }
 
 .btn-outline {
-  background-color: transparent;
-  color: var(--gold-primary);
-  border: 2px solid var(--card-border);
+  background-color: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
 }
 
 .btn-outline:hover {
-  background-color: var(--gold-subtle);
-  border-color: var(--gold-primary);
+  border-color: var(--border-hover);
+  background-color: var(--surface);
+  color: var(--accent);
   transform: translateY(-2px);
 }
 
@@ -144,7 +170,7 @@
 .gallery-header h2 {
   font-family: 'Playfair Display', 'Merriweather', serif;
   font-size: clamp(1.6rem, 4vw, 2.75rem);
-  color: var(--text-light);
+  color: var(--text);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -154,7 +180,7 @@
 }
 
 .leaf-decor {
-  color: var(--gold-primary);
+  color: var(--accent);
   width: clamp(20px, 4vw, 30px);
   height: clamp(20px, 4vw, 30px);
   flex-shrink: 0;
@@ -171,6 +197,7 @@
 
 .gallery-header p {
   color: var(--text-muted);
+  font-weight: 500;
   font-size: clamp(0.9rem, 2vw, 1.1rem);
 }
 
@@ -185,20 +212,21 @@
 
 .gallery-card {
   position: relative;
-  background: linear-gradient(180deg, #1d1813, #16120e);
-  border: 1px solid rgba(226, 183, 85, 0.18);
+  background: var(--card);
+  border: 1px solid var(--border);
   border-radius: 22px;
   overflow: hidden;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
+  box-shadow: 0 10px 30px var(--shadow-dark);
 }
 
 .gallery-card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at top, rgba(226, 183, 85, 0.08), transparent 60%);
+  background: radial-gradient(circle at top, var(--shadow-gold), transparent 60%);
   pointer-events: none;
   z-index: 1;
 }
@@ -226,14 +254,14 @@
   font-size: clamp(0.75rem, 1.8vw, 0.825rem);
   font-weight: 700;
   border-radius: 30px;
-  background: rgba(17, 15, 12, 0.85);
+  background: rgba(26, 8, 3, 0.85);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
-  color: var(--gold-primary);
-  border: 1px solid rgba(226, 183, 85, 0.35);
+  color: var(--accent-light);
+  border: 1px solid var(--border);
   letter-spacing: 0.5px;
   z-index: 10;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 12px var(--shadow-dark);
   white-space: nowrap;
 }
 
@@ -254,19 +282,19 @@
   transform: translate(-50%, -50%);
   width: clamp(34px, 6vw, 44px);
   height: clamp(34px, 6vw, 44px);
-  background: var(--gold-primary);
-  border: 3px solid var(--bg-dark);
+  background: var(--accent);
+  border: 3px solid var(--card);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 10;
-  box-shadow: 0 8px 25px rgba(226, 183, 85, 0.4);
+  box-shadow: 0 8px 25px var(--shadow-gold);
   transition: transform var(--transition-fast);
 }
 
 .arrow-icon-green {
-  color: var(--text-dark);
+  color: var(--primary-dark);
   width: clamp(14px, 3.5vw, 18px);
   height: clamp(14px, 3.5vw, 18px);
 }
@@ -283,9 +311,9 @@
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  color: var(--gold-primary);
-  background-color: var(--bg-card);
-  border-top: 1px solid rgba(226, 183, 85, 0.15);
+  color: var(--text);
+  background-color: var(--surface);
+  border-top: 1px solid var(--border);
   text-align: center;
   margin-top: auto;
 }
@@ -293,7 +321,7 @@
 .footer-leaf {
   width: 18px;
   height: 18px;
-  color: var(--gold-primary);
+  color: var(--accent);
   flex-shrink: 0;
 }
 
@@ -303,15 +331,15 @@
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
-  background-color: var(--bg-card);
+  background-color: var(--card);
   padding: 0.85rem 1.75rem;
   border-radius: 9999px;
   margin: 1.5rem auto 0;
-  border: 1px solid var(--border-light);
-  color: var(--gold-primary);
+  border: 1px solid var(--border);
+  color: var(--text);
   font-weight: 600;
   font-size: clamp(0.8rem, 2vw, 0.95rem);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 25px var(--shadow-dark);
   width: fit-content;
   max-width: 100%;
   box-sizing: border-box;
@@ -321,7 +349,7 @@
 .shield-icon {
   width: 18px;
   height: 18px;
-  color: var(--gold-primary);
+  color: var(--accent);
   flex-shrink: 0;
 }
 
@@ -333,8 +361,8 @@
 @media (hover: hover) {
   .gallery-card:hover {
     transform: translateY(-8px);
-    border-color: var(--gold-primary);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45), 0 0 40px rgba(226, 183, 85, 0.15);
+    border-color: var(--border-hover);
+    box-shadow: 0 20px 40px var(--shadow-dark), 0 0 30px var(--shadow-gold);
   }
 
   .gallery-card:hover .gallery-image {

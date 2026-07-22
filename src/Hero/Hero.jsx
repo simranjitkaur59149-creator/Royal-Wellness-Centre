@@ -1,6 +1,6 @@
 import { Trophy } from "lucide-react";
 import Reveal from "../Reveal/Reveal";
-import { WhatsAppIcon } from "../Icons/Icons";
+import { FaWhatsapp } from "react-icons/fa";
 import portrait from "../assets/hero-portrait.webp";
 import "./Hero.css";
 
@@ -85,7 +85,7 @@ export default function Hero() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <WhatsAppIcon className="hero-whatsapp-icon"/>
+                  <FaWhatsapp  className="hero-whatsapp-icon"/>
                   WhatsApp Now
                 </a>
               </div>

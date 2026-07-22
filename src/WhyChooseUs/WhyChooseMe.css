@@ -6,12 +6,14 @@
   position: relative;
   padding: clamp(1rem, 3vw, 2rem) 0;
   scroll-margin-top: 5rem;
+  background-color: var(--bg);
 }
 
 .why-container {
   width: min(100%, 1280px);
   margin: auto;
   padding-inline: clamp(1rem, 4vw, 2rem);
+  box-sizing: border-box;
 }
 
 /* ===========================
@@ -35,6 +37,17 @@
   padding: clamp(1rem, 2vw, 1.5rem);
   height: 100%;
   box-sizing: border-box;
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px var(--shadow-dark);
+  transition: all 0.3s ease;
+}
+
+.why-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 10px 30px var(--shadow-gold);
+  transform: translateY(-2px);
 }
 
 /* ===========================
@@ -52,21 +65,28 @@
   flex-shrink: 0;
 
   border-radius: 50%;
-  border: 1px solid rgba(212, 175, 55, 0.35);
-  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid var(--border);
+  background: var(--surface);
 
-  transition: all .4s ease;
+  transition: all .4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .why-icon {
   width: clamp(1rem, 2vw, 1.3rem);
   height: clamp(1rem, 2vw, 1.3rem);
-  color: #e2bf5e;
+  color: var(--accent);
+  transition: color .4s ease;
 }
 
 .why-card:hover .why-icon-box {
   transform: scale(1.08);
-  border-color: rgba(212, 175, 55, 0.7);
+  border-color: var(--accent-light);
+  background: var(--primary-light);
+  box-shadow: 0 0 20px -2px var(--shadow-gold);
+}
+
+.why-card:hover .why-icon {
+  color: var(--accent-light);
 }
 
 /* ===========================
@@ -81,12 +101,12 @@
   margin: 0;
 
   font-size: clamp(0.85rem, 1vw, 1rem);
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   line-height: 1.35;
 
-  color: #f3e2a7;
+  color: var(--text);
 }
 
 .why-card-desc {
@@ -95,32 +115,33 @@
   font-size: clamp(0.8rem, .9vw, .95rem);
   line-height: 1.7;
 
-  color: rgba(255,255,255,.65);
+  color: var(--text-muted);
+  font-weight: 450;
 }
 
 /* ===========================
    EXTRA SMALL DEVICES
 =========================== */
 
-@media (max-width:480px){
+@media (max-width: 480px) {
 
-    .why-grid{
-        grid-template-columns:1fr;
-        gap:1rem;
-    }
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 
-    .why-card{
-        padding:1rem;
-        gap:.75rem;
-    }
+  .why-card {
+    padding: 1rem;
+    gap: .75rem;
+  }
 
-    .why-card-title{
-        font-size:.9rem;
-    }
+  .why-card-title {
+    font-size: .9rem;
+  }
 
-    .why-card-desc{
-        font-size:.82rem;
-    }
+  .why-card-desc {
+    font-size: .82rem;
+  }
 
 }
 
@@ -128,11 +149,11 @@
    TABLETS
 =========================== */
 
-@media (min-width:768px){
+@media (min-width: 768px) {
 
-    .why-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
 }
 
@@ -140,11 +161,11 @@
    LAPTOPS
 =========================== */
 
-@media (min-width:1024px){
+@media (min-width: 1024px) {
 
-    .why-grid{
-        grid-template-columns:repeat(4,1fr);
-    }
+  .why-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 
 }
 
@@ -152,18 +173,18 @@
    LARGE DESKTOPS
 =========================== */
 
-@media (min-width:1600px){
+@media (min-width: 1600px) {
 
-    .why-container{
-        max-width:1500px;
-    }
+  .why-container {
+    max-width: 1500px;
+  }
 
-    .why-grid{
-        gap:2rem;
-    }
+  .why-grid {
+    gap: 2rem;
+  }
 
-    .why-card{
-        padding:2rem;
-    }
+  .why-card {
+    padding: 2rem;
+  }
 
 }

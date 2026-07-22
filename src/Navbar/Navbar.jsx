@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { LotusIcon } from "../Icons/Icons";
+
 import "./Navbar.css";
 
 const links = [
@@ -31,9 +31,7 @@ export default function Navbar() {
           
           {/* Logo */}
           <a href="#home" className="navbar-logo-group">
-            <span className="navbar-logo-icon">
-              <LotusIcon className="w-8 h-8" />
-            </span>
+           
             <span className="navbar-logo-text">
               <span className="navbar-brand-name ">
                Royal Wellness Centre

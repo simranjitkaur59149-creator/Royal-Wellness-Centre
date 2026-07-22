@@ -1,21 +1,68 @@
+/* Base scroll-reveal wrapper */
 .reveal-wrapper {
-  /* Transition configurations matching duration-[900ms] and custom easing function */
-  transition-property: all;
+  /* Transition configurations matching duration-[900ms] and custom smooth easing */
+  transition-property: opacity, transform, filter;
   transition-duration: 900ms;
   transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   
-  /* Hardware acceleration optimization for transitions */
-  will-change: transform;
+  /* Hardware acceleration & rendering optimization */
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
 }
 
-/* Hidden state matching opacity-0 translate-y-10 (40px translation) */
+/* Hidden state (Initial scroll position) */
 .reveal-wrapper.is-hidden {
   opacity: 0;
   transform: translateY(2.5rem);
+  pointer-events: none; /* Prevents clicks while hidden */
 }
 
-/* Visible reveal state matching opacity-100 translate-y-0 */
+/* Visible reveal state (Triggered when scrolled into view) */
 .reveal-wrapper.is-visible {
   opacity: 1;
   transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* --- Optional Theme-Specific Reveal Variants --- */
+
+/* Scale-In Variant (Great for Cards and Images) */
+.reveal-wrapper.reveal-scale.is-hidden {
+  opacity: 0;
+  transform: scale(0.94) translateY(1.5rem);
+}
+
+.reveal-wrapper.reveal-scale.is-visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* Glow-In Variant (Great for Featured Cards/Hero Elements) */
+.reveal-wrapper.reveal-glow.is-hidden {
+  opacity: 0;
+  filter: blur(4px);
+  transform: translateY(2rem);
+}
+
+.reveal-wrapper.reveal-glow.is-visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+/* Reduced motion accessibility fallback */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-wrapper,
+  .reveal-wrapper.reveal-scale,
+  .reveal-wrapper.reveal-glow {
+    transition: opacity 300ms ease-in-out;
+    filter: none;
+  }
+  
+  .reveal-wrapper.is-hidden,
+  .reveal-wrapper.reveal-scale.is-hidden,
+  .reveal-wrapper.reveal-glow.is-hidden {
+    transform: none;
+  }
 }

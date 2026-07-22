@@ -4,6 +4,7 @@
   padding-top: 1.5rem; /* py-6 */
   padding-bottom: 1.5rem;
   scroll-margin-top: 5rem; /* scroll-mt-20 */
+  background-color: var(--bg);
 }
 
 /* Background Image Swirl Decorative Setup */
@@ -12,8 +13,9 @@
   right: -8rem; /* -right-32 */
   top: 0;
   width: 50%;
-  opacity: 0.25;
+  opacity: 0.15;
   pointer-events: none;
+  filter: sepia(100%) hue-rotate(5deg) saturate(200%); /* Warms up decorative background elements */
 }
 
 .testimonials-container {
@@ -40,6 +42,17 @@
   padding-top: 2.25rem; /* pt-9 */
   margin: 0;
   box-sizing: border-box;
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px var(--shadow-dark);
+  transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 10px 30px var(--shadow-gold);
+  transform: translateY(-2px);
 }
 
 /* Icon Positions and Styling */
@@ -49,9 +62,9 @@
   top: 1.5rem; /* top-6 */
   height: 1.75rem; /* h-7 */
   width: 1.75rem; /* w-7 */
-  color: #d4af37;
-  fill: #d4af37;
-  opacity: 0.9;
+  color: var(--accent);
+  fill: var(--accent);
+  opacity: 0.35;
 }
 
 .testimonial-stars {
@@ -65,8 +78,8 @@
 .testimonial-star-icon {
   height: 0.875rem; /* h-3.5 */
   width: 0.875rem; /* w-3.5 */
-  color: #e2bf5e;
-  fill: #e2bf5e;
+  color: var(--highlight);
+  fill: var(--highlight);
 }
 
 /* Quote Text Styling */
@@ -76,7 +89,7 @@
   font-size: 13.5px;
   font-style: italic;
   line-height: 1.625; /* leading-relaxed */
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-muted);
 }
 
 /* Author Alignment and Typography */
@@ -91,14 +104,14 @@
 .testimonial-author-line {
   height: 1px;
   width: 2rem; /* w-8 */
-  background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.7));
+  background: linear-gradient(to right, transparent, var(--accent));
 }
 
 .testimonial-author-name {
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.025em; /* tracking-wide */
-  color: #ecd282;
+  color: var(--accent-light);
 }
 
 /* --- Responsive Media Queries --- */
