@@ -4,7 +4,7 @@ import Reveal from "../Reveal/Reveal";
 import "./Transformation.css";
 
 // Provided gallery images (preserved)
-import GalleryImg1 from "../assets/img1.webp";
+import GalleryImg1 from "../assets/img1.png";
 import GalleryImg2 from "../assets/img2.webp";
 import GalleryImg3 from "../assets/img3.webp";
 import GalleryImg4 from "../assets/img4.webp";
@@ -13,9 +13,9 @@ import GalleryImg5 from "../assets/img5.webp";
 const galleryData = [
   {
     img: GalleryImg1,
-    tag: "15 KG Lost - Healthier, Happier, Stronger",
-    weight1: "75 KG",
-    weight2: "60 KG",
+    tag: "16 KG Lost - Healthier, Happier, Stronger",
+    weight1: "96 KG",
+    weight2: "80 KG",
   },
   {
     img: GalleryImg2,

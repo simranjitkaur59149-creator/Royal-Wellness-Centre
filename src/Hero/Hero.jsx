@@ -1,7 +1,7 @@
 import { Trophy } from "lucide-react";
 import Reveal from "../Reveal/Reveal";
 import { FaWhatsapp } from "react-icons/fa";
-import portrait from "../assets/hero-portrait.webp";
+import portrait from "../assets/hero-portrait.jpeg";
 import "./Hero.css";
 
 export default function Hero() {
