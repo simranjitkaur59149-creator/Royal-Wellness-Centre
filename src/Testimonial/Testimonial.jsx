@@ -1,8 +1,13 @@
 import { Star, Quote } from "lucide-react";
 import SectionHeading from "../SectionHeading/SectionHeading";
-import Reveal from "../Reveal/Reveal";
-import "./Testimonials.css";
 
+
+import "./Testimonials.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 const testimonials = [
   {
     quote:
@@ -46,10 +51,21 @@ export default function Testimonials() {
       />
       <div className="testimonials-container">
         <SectionHeading title="Client Success Stories" />
-        
+         <Swiper
+            modules={[Navigation, Pagination, Autoplay]}
+            spaceBetween={20}
+            slidesPerView={1}
+            pagination={{ clickable: true }}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            breakpoints={{
+              0: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+          >
         <div className="testimonials-grid">
           {testimonials.map((t, i) => (
-            <Reveal key={t.name} delay={i * 110}>
+            <SwiperSlide  key={t.name} >
               <figure className="testimonial-card card-gold card-gold-lift">
                 <Quote className="testimonial-quote-icon" />
                 
@@ -70,9 +86,9 @@ export default function Testimonials() {
                   </span>
                 </figcaption>
               </figure>
-            </Reveal>
+            </SwiperSlide >
           ))}
-        </div>
+        </div></Swiper>
       </div>
     </section>
   );

@@ -1,7 +1,8 @@
 import { Trophy } from "lucide-react";
 import Reveal from "../Reveal/Reveal";
 import { FaWhatsapp } from "react-icons/fa";
-import portrait from "../assets/hero-portrait.jpeg";
+import portrait from "../assets/hero-portrait.webp";
+
 import "./Hero.css";
 
 export default function Hero() {
@@ -45,8 +46,8 @@ export default function Hero() {
 
             <Reveal delay={100}>
               <h1 className="hero-main-title">
-                Transform Your
-                <span className="gold-text"> Health Naturally</span>
+                Redefine Your
+                <span className="gold-text">  Wellness Journey</span>
               </h1>
             </Reveal>
 
@@ -58,8 +59,7 @@ export default function Hero() {
 
             <Reveal delay={300}>
               <p className="hero-description-text">
-                Lose weight, build healthy habits and achieve lasting wellness with
-                personalized online coaching designed around your lifestyle.
+               Your journey to a healthier, happier life starts here with personalized coaching designed to fit your goals, lifestyle, and routine.
               </p>
             </Reveal>
 

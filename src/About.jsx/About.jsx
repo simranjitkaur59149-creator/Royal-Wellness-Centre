@@ -1,5 +1,7 @@
 import Reveal from "../Reveal/Reveal";
-import nutritions from "../assets/about-nutrition.webp";
+import nutritions from "../assets/about-nutrition.png";
+
+
 import "./About.css";
 
 export default function About() {
@@ -23,15 +25,11 @@ export default function About() {
                  
                   
                  Hi, I&apos;m{" "}    <span className="about-highlight">Jaswinder Kaur, a
-                  Certified Wellness Coach </span>passionate about helping you achieve
-                  your health and fitness goals through personalized online
-                  coaching. I offer customized diet plans, nutrition guidance,
-                  weight loss & weight gain coaching, virtual Zumba and Bhangra
-                  fitness sessions, along with continuous motivation and
-                  support. My goal is to help you build sustainable healthy
-                  habits while delivering visible progress from the very
-                  beginning. Start your fitness journey today and become the
-                  healthiest version of yourself—anytime, anywhere.
+                  Certified Wellness Coach </span>dedicated to helping you achieve your health and fitness goals through personalized online coaching.
+
+I provide customized diet plans, nutrition guidance, weight loss and weight gain coaching, virtual Zumba and Bhangra sessions, and ongoing support to help you build healthy habits and achieve lasting results.
+
+Start your wellness journey today and become the healthiest version of yourself—anytime, anywhere.
                 </p>
 
                 <div className="about-tags-container">

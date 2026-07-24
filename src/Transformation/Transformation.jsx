@@ -4,7 +4,7 @@ import Reveal from "../Reveal/Reveal";
 import "./Transformation.css";
 
 // Provided gallery images (preserved)
-import GalleryImg1 from "../assets/img1.png";
+import GalleryImg1 from "../assets/img1.webp";
 import GalleryImg2 from "../assets/img2.webp";
 import GalleryImg3 from "../assets/img3.webp";
 import GalleryImg4 from "../assets/img4.webp";
