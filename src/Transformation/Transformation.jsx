@@ -13,21 +13,21 @@ import GalleryImg5 from "../assets/img5.webp";
 const galleryData = [
   {
     img: GalleryImg1,
-    tag: "16 KG Lost - Healthier, Happier, Stronger",
+    tag: "16 KG weight Lost - Healthier, Happier, Stronger",
     weight1: "96 KG",
     weight2: "80 KG",
   },
   {
     img: GalleryImg2,
-    tag: "Stronger Body, Better Future",
-    weight1: "",
-    weight2: "",
+    tag: "42 KG weight Lost, Better Future",
+    weight1: "102 KG",
+    weight2: "60 KG",
   },
   {
     img: GalleryImg3,
-    tag: "35 KG Lost - Confidence Regained",
-    weight1: "110 KG",
-    weight2: "75 KG",
+    tag: " Confidence Regained",
+    // weight1: "110 KG",
+    // weight2: "75 KG",
   },
   {
     img: GalleryImg4,
@@ -37,9 +37,9 @@ const galleryData = [
   },
   {
     img: GalleryImg5,
-    tag: "92 KG to 72 KG - A Better You, Every Day",
-    weight1: "92 KG",
-    weight2: "72 KG",
+    tag: "12 KG weight Lost  - A Better You, Every Day",
+    // weight1: "92 KG",
+    // weight2: "72 KG",
   },
 ];
 
