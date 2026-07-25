@@ -1,5 +1,5 @@
 import Reveal from "../Reveal/Reveal";
-import nutritions from "../assets/about-nutrition.png";
+import nutritions from "../assets/about-nutrition.webp";
 
 
 import "./About.css";
