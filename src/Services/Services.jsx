@@ -4,12 +4,12 @@ import Reveal from "../Reveal/Reveal";
 import "./Services.css";
 
 const services = [
-  { icon: Weight, title: "Weight Loss Program", desc: "Personalized plans for sustainable fat loss" },
   { icon: Dumbbell, title: "Weight Gain Program", desc: "Healthy weight gain with proper nutrition" },
-  { icon: ClipboardList, title: "Personalized Diet Plans", desc: "Custom meals for your lifestyle and goals" },
+  { icon: Drum, title: "Virtual Bhangra Fitness", desc: "Traditional moves for a stronger you" },
+  { icon: Weight, title: "Weight Loss Program", desc: "Personalized plans for sustainable fat loss" },
   { icon: Leaf, title: "Nutrition Guidance", desc: "Right food choices for a better you" },
   { icon: Zap, title: "Virtual Workout Sessions", desc:"Expert coaching from home" },
-  { icon: Drum, title: "Virtual Bhangra Fitness", desc: "Traditional moves for a stronger you" },
+  { icon: ClipboardList, title: "Personalized Diet Plans", desc: "Custom meals for your lifestyle and goals" },
 ];
 
 export default function Services() {

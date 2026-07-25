@@ -66,7 +66,7 @@ export default function Transformation() {
         </Reveal>
 
         {/* --- 2. GALLERY SECTION --- */}
-        <Reveal delay={300}>
+        <Reveal delay={100}>
           <div className="gallery-grid">
             {galleryData.map((item, index) => (
               <div key={index} className="gallery-card">
