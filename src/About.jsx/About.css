@@ -52,12 +52,13 @@
 }
 
 .about-description {
-  margin-top: clamp(1rem, 2vh, 1.25rem);
-  font-size: clamp(0.8125rem, 2.2vw, 0.875rem);
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.78);
-  text-wrap: pretty;
-  overflow-wrap: break-word;
+    margin-top: clamp(1rem, 2vh, 1.25rem);
+    font-size: clamp(1rem, 2.2vw, 0.875rem);
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.78);
+    text-wrap: pretty;
+    overflow-wrap: break-word;
+    text-align: justify;
 }
 
 .about-highlight {
@@ -124,6 +125,7 @@
   border-radius: 0.75rem;
   border: 1px solid rgba(212, 175, 55, 0.35);
   object-fit: cover;
+  object-position: top ;
   box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.9);
   display: block;
 }
