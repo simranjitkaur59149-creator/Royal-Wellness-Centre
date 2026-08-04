@@ -13,45 +13,40 @@ import GalleryImg5 from "../assets/img5.webp";
 const galleryData = [
   {
     img: GalleryImg1,
-    // tag: "16 KG weight Lost - Healthier, Happier, Stronger",
-    tag:" Results may vary on person to person",
+    tag: "16 KG Weight Lost – Healthier, Happier, Stronger. Results may vary from person to person.",
     weight1: "96 KG",
     weight2: "80 KG",
   },
   {
     img: GalleryImg2,
-    // tag: "42 KG weight Lost, Better Future",
-        tag:" Results may vary on person to person",
+    tag: "42 KG Weight Lost – Better Future. Results may vary from person to person.",
     weight1: "102 KG",
     weight2: "60 KG",
   },
   {
     img: GalleryImg3,
-    // tag: " Confidence Regained",
-        tag:" Results may vary on person to person",
+    tag: "Confidence Regained. Results may vary from person to person.",
     // weight1: "110 KG",
     // weight2: "75 KG",
   },
   {
     img: GalleryImg4,
-    // tag: "Stronger Health, Happier Life",
-        tag:" Results may vary on person to person",
+    tag: "Stronger Health, Happier Life. Results may vary from person to person.",
     weight1: "",
     weight2: "",
   },
   {
     img: GalleryImg5,
-     // weight1: "92 KG",
+    tag: "Health Transformation. Results may vary from person to person.",
+    // weight1: "92 KG",
     // weight2: "72 KG",
-        tag:" Results may vary on person to person",
-  },
+  }
 ];
-
 export default function Transformation() {
   return (
     <section id="transformation" className="transform-section">
       <div className="transform-container">
-        {/* --- 1. HERO SECTION --- */}
+     
         <Reveal>
           <div className="hero-grid">
             <div className="hero-content">
